@@ -1,7 +1,11 @@
 /* Master styles */
 
+body {font-family: Arial, Helvetica, sans-serif}
+h1 {font-family: "merriweather", serif; font-size: 400%; font-weight: 900; letter-spacing: .2em; color:rgb(90, 93, 97);}
+
 .body { 
     margin: 0px
+    
 }
 
 .container { 
@@ -89,6 +93,7 @@ button:hover {background-color: rgb(27, 27, 27);}
 .portfolio-items-wrapper {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
 }
 .portfolio-item-wrapper {
     position: relative;
@@ -133,6 +138,15 @@ button:hover {background-color: rgb(27, 27, 27);}
     transition: 1s;
     filter: brightness(10%);
 }
+
+/*media query for identify work section  .scale {width:75%; height:auto;*/
+@media only screen and (max-width: 600px) {
+    .portfolio-items-wrapper {
+      grid-template-rows: repeat(3, auto);}
+    .portfolio-item-wrapper {
+      grid-column: span 3;}
+    }
+
 /* Footer styles */
 .footer-wrapper{
     display: flex;
@@ -172,28 +186,45 @@ h1 {
 
 .mySkills-Grid-Container {
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(3,100px);
-    border: 2px dashed royalblue;
-    align-items: center;  align-content: center;
-    justify-content: space-evenly;
-}
-.skills-image {
-    height: 1fr;
-    width: 1fr;
+    row-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;  
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
 }
 
+
+
 .mySkills-Grid-Container {
-    margin: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
-    background-color: #53869e;
+   padding-top: 4%;
+   padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    background-color: #558796;
     
 }
 .skills-content {
+    grid-column-start: 2;
+    grid-column-end: 4;
     color:linen;
-    height: 200px;
-    width: 1fr;
-    background-color: mediumblue;
-    text-align: center;
+    height: auto;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-style:solid;
+    border-color:linen;
+    border-radius: 15px;
+    
+    text-align: left;
 }
+
+/*media query for identify work section  .scale {width:75%; height:auto;*/
+    @media only screen and (max-width: 600px) {
+        .mySkills-Grid-Container {
+        grid-template-rows: repeat(6, auto);}
+        .skills-content {
+          grid-column: span 3;}
+        .skills-image {
+        grid-column: span 3;}
+        }
